@@ -1,0 +1,37 @@
+const products = [
+  {
+      "name": "Meat",
+      "price": 15.00,
+      "quantity": 3
+  },
+  {
+      "name": "Bread",
+      "price": 6.50,
+      "quantity": 2
+  },
+  {
+      "name": "Milk",
+      "price": 127.00,
+      "quantity": 12
+  }
+];
+function findHigherQuantity(products) {
+  let maxQuantityProduct = products[0];
+  for (let i = 1; i < products.length; i++) {
+      if (products[i].quantity > maxQuantityProduct.quantity) {
+          maxQuantityProduct = products[i];
+      }
+  }
+  return maxQuantityProduct;
+}
+function calculateTotalCost(products) {
+  let totalCost = 0;
+  for (let i = 0; i < products.length; i++) {
+      totalCost += products[i].price * products[i].quantity;
+  }
+  return totalCost;
+}
+const productWithHighestQuantity = findHigherQuantity(products);
+const totalCost = calculateTotalCost(products);
+console.log("Produsul cu cea mai mare cantitate în stoc:", productWithHighestQuantity);
+console.log("Costul total pentru toate produsele:", totalCost);
