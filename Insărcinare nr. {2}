@@ -1,0 +1,15 @@
+function uppercaseLastLetter(sentence) {
+  let words = sentence.split(" "); 
+  let transformedWords = [];
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    if (word.length > 0) {
+      let lastLetter = word[word.length - 1].toUpperCase();
+      let transformedWord = word.slice(0, -1) + lastLetter;
+      transformedWords.push(transformedWord);
+    }
+  }
+  let result = transformedWords.join(" ");
+  console.log(result);
+}
+uppercaseLastLetter("astszi este marti");
