@@ -1,0 +1,12 @@
+const readlineSync = require('readline-sync');
+function processArray() {
+  const input = readlineSync.question('Введите числа, через пробел: ');
+  const numbers = input.split(' ').map(Number);
+  const negativeSquares = numbers
+    .filter((num) => num < 0)
+    .map((num) => num * num);
+  const positiveAndZeroNumbers = numbers.filter((num) => num >= 0);
+  const result = negativeSquares.concat(positiveAndZeroNumbers);
+  console.log(result);
+}
+processArray();
